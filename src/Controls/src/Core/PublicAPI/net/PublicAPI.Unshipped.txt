@@ -13,6 +13,7 @@ Microsoft.Maui.Controls.HybridWebView.InvokeJavaScriptAsync(string! methodName, 
 Microsoft.Maui.Controls.HybridWebView.SetInvokeJavaScriptTarget<T>(T! target) -> void
 Microsoft.Maui.Controls.NavigatedFromEventArgs.NavigationType.get -> Microsoft.Maui.Controls.NavigationType
 Microsoft.Maui.Controls.NavigatedToEventArgs.NavigationType.get -> Microsoft.Maui.Controls.NavigationType
+Microsoft.Maui.Controls.NavigatingFromEventArgs.NavigationType.get -> Microsoft.Maui.Controls.NavigationType
 Microsoft.Maui.Controls.NavigationType
 Microsoft.Maui.Controls.NavigationType.Initialize = 6 -> Microsoft.Maui.Controls.NavigationType
 Microsoft.Maui.Controls.NavigationType.Insert = 3 -> Microsoft.Maui.Controls.NavigationType
@@ -30,6 +31,7 @@ override Microsoft.Maui.Controls.ShadowTypeConverter.ConvertTo(System.ComponentM
 ~Microsoft.Maui.Controls.Internals.TypedBindingBase.UpdateSourceEventName.set -> void
 ~Microsoft.Maui.Controls.NavigatedFromEventArgs.DestinationPage.get -> Microsoft.Maui.Controls.Page
 ~Microsoft.Maui.Controls.NavigatedToEventArgs.PreviousPage.get -> Microsoft.Maui.Controls.Page
+~Microsoft.Maui.Controls.NavigatingFromEventArgs.DestinationPage.get -> Microsoft.Maui.Controls.Page
 ~Microsoft.Maui.Controls.ResourceDictionary.SetAndCreateSource<T>(System.Uri value) -> void
 ~Microsoft.Maui.Controls.Xaml.IXamlTypeResolver.Resolve(string qualifiedTypeName, System.IServiceProvider serviceProvider = null, bool expandToExtension = true) -> System.Type
 ~Microsoft.Maui.Controls.WebViewProcessTerminatedEventArgs.PlatformArgs.get -> Microsoft.Maui.Controls.PlatformWebViewProcessTerminatedEventArgs
