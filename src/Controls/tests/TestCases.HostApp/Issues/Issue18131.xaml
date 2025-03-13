@@ -2,25 +2,27 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Maui.Controls.Sample.Issues.Issue18131">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style
-                TargetType="Shape"
-                ApplyToDerivedTypes="True">
-                <Setter Property="WidthRequest" Value="60" />
-                <Setter Property="HeightRequest" Value="60" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <VerticalStackLayout>
 
         <HorizontalStackLayout
             Padding="24,12"
             Spacing="6">
+            <HorizontalStackLayout.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="CheckBox">
+                        <Setter Property="VerticalOptions" Value="Center" />
+                    </Style>
+                    <Style TargetType="Label">
+                        <Setter Property="VerticalOptions" Value="Center" />
+                        <Setter Property="VerticalTextAlignment" Value="Center" />
+                    </Style>
+                </ResourceDictionary>
+            </HorizontalStackLayout.Resources>
+
             <CheckBox AutomationId="ToggleBackgroundColor" CheckedChanged="OnBackgroundColorChecked" />
-            <Label Text="BackgroundColor" />
+            <Label Text="BackgroundColor" Margin="0,0,12,0" />
             <CheckBox AutomationId="ToggleBackground" CheckedChanged="OnBackgroundChecked" />
-            <Label Text="Background" />
+            <Label Text="Background" Margin="0,0,12,0" />
             <CheckBox AutomationId="ToggleFill" CheckedChanged="OnFillChecked" />
             <Label Text="Fill" />
         </HorizontalStackLayout>
@@ -33,6 +35,14 @@
             ColumnSpacing="12"
             RowSpacing="12"
             HorizontalOptions="Start">
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Shape" ApplyToDerivedTypes="True">
+                        <Setter Property="WidthRequest" Value="60" />
+                        <Setter Property="HeightRequest" Value="60" />
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
 
             <Label Text="Starts with nothing set" Grid.ColumnSpan="2" />
             <Ellipse Grid.Row="1" />
