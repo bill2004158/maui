@@ -2,24 +2,63 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Maui.Controls.Sample.Issues.Issue18131">
-  <StackLayout
-        Padding="12">
-    <Rectangle
-            x:Name="RectangleTest"
-            HeightRequest="100"
-            WidthRequest="100"
-            BackgroundColor="Red"
-            Margin="0, 12"/>
-    <Ellipse
-            x:Name="EllipseTest"
-            HeightRequest="100"
-            WidthRequest="100"
-            BackgroundColor="Red"
-            Fill="Yellow"
-            Margin="0, 12"/>
-    <Button
-            AutomationId="ChangeColorButton"
-            Text="Update Color"
-            Clicked="OnButtonClicked"/>
-  </StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style
+                TargetType="Shape"
+                ApplyToDerivedTypes="True">
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="HeightRequest" Value="60" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout
+            Padding="24,12"
+            Spacing="6">
+            <CheckBox AutomationId="ToggleBackgroundColor" CheckedChanged="OnBackgroundColorChecked" />
+            <Label Text="BackgroundColor" />
+            <CheckBox AutomationId="ToggleBackground" CheckedChanged="OnBackgroundChecked" />
+            <Label Text="Background" />
+            <CheckBox AutomationId="ToggleFill" CheckedChanged="OnFillChecked" />
+            <Label Text="Fill" />
+        </HorizontalStackLayout>
+
+        <Grid
+            x:Name="shapesGrid"
+            Padding="24,12"
+            ColumnDefinitions="*,*"
+            RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+            ColumnSpacing="12"
+            RowSpacing="12"
+            HorizontalOptions="Start">
+
+            <Label Text="Starts with nothing set" Grid.ColumnSpan="2" />
+            <Ellipse Grid.Row="1" />
+            <Rectangle Grid.Row="1" />
+
+            <Label Text="Initial: BackgroundColor" Grid.ColumnSpan="2" Grid.Row="2" />
+            <Ellipse BackgroundColor="Red" Grid.Row="3" />
+            <Rectangle BackgroundColor="Red" Grid.Column="1" Grid.Row="3" />
+
+            <Label Text="Initial: Background" Grid.ColumnSpan="2" Grid.Row="4" />
+            <Ellipse Background="Blue" Grid.Row="5" />
+            <Rectangle Background="Blue" Grid.Column="1" Grid.Row="5" />
+
+            <Label Text="Initial: Fill" Grid.ColumnSpan="2" Grid.Row="6" />
+            <Ellipse Fill="Green" Grid.Row="7" />
+            <Rectangle Fill="Green" Grid.Column="1" Grid.Row="7" />
+
+            <Label Text="Initial: Fill + BackgroundColor" Grid.ColumnSpan="2" Grid.Row="8" />
+            <Ellipse BackgroundColor="Red" Fill="Green" Grid.Row="9" />
+            <Rectangle BackgroundColor="Red" Fill="Green" Grid.Column="1" Grid.Row="9" />
+
+            <Label Text="Initial: Fill + Background" Grid.ColumnSpan="2" Grid.Row="10" />
+            <Ellipse Background="Blue" Fill="Green" Grid.Row="11" />
+            <Rectangle Background="Blue" Fill="Green" Grid.Column="1" Grid.Row="11" />
+
+        </Grid>
+
+    </VerticalStackLayout>
 </ContentPage>

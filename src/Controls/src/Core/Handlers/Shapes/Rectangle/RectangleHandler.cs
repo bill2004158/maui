@@ -7,7 +7,6 @@ namespace Microsoft.Maui.Controls.Handlers
 	{
 		public static new IPropertyMapper<Rectangle, IShapeViewHandler> Mapper = new PropertyMapper<Rectangle, IShapeViewHandler>(ShapeViewHandler.Mapper)
 		{
-			[nameof(Rectangle.Background)] = MapBackground,
 			[nameof(Rectangle.RadiusX)] = MapRadiusX,
 			[nameof(Rectangle.RadiusY)] = MapRadiusY,
 		};
