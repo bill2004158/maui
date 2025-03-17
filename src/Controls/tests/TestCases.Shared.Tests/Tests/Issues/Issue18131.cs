@@ -19,10 +19,10 @@ public class Issue18131 : _IssuesUITest
 		Exception? exception = null;
 
 		App.WaitForElement("ToggleBackgroundColor");
-		VerifyScreenshotOrSetException(ref exception, TestContext.CurrentContext.Test.MethodName + "InitialShapesBackgroundandFillColors");
+		VerifyScreenshotOrSetException(ref exception, TestContext.CurrentContext.Test.MethodName + "_Initial");
 
 		App.Click("ToggleBackgroundColor");
-		VerifyScreenshotOrSetException(ref exception, TestContext.CurrentContext.Test.MethodName + "");
+		VerifyScreenshotOrSetException(ref exception, TestContext.CurrentContext.Test.MethodName + "_BackgroundColor");
 
 		if (exception != null)
 		{
